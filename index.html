@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marcho Por</title>
+<meta name="description" content="Motivos con fuente verificable para marchar en el Perú. Elige uno, imprímelo en A3 y marcha.">
+<meta property="og:title" content="Marcho Por">
+<meta property="og:description" content="Motivos con fuente verificable para marchar en el Perú. Imprímelo y marcha.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#d0021b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23d0021b'/%3E%3Cpath d='M9 22V10h3l4 6 4-6h3v12h-3v-7l-4 6-4-6v7z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Work+Sans:wght@500;600&display=swap">
+<style>
+/* Layout: una pantalla, un motivo. Barra mínima arriba y abajo; menú y cartel en hojas a pantalla completa. */
+:root {
+  --bg: #ffffff;
+  --ink: #111214;
+  --muted: #74787f;
+  --line: #e8e9ec;
+  --accent: #d0021b;
+  --on-accent: #ffffff;
+  --display: "Anton", Impact, "Arial Narrow", sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0e0f11; --ink: #ededee; --muted: #8b9098; --line: #24262a; --accent: #ff4b5c; --on-accent: #0e0f11; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #0e0f11; --ink: #ededee; --muted: #8b9098; --line: #24262a; --accent: #ff4b5c; --on-accent: #0e0f11; color-scheme: dark; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+button, input { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.link { color: var(--muted); }
+.link:hover { color: var(--ink); }
+
+.screen { min-height: 100%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-rows: auto 1fr auto; }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 22px; }
+.brand { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.brand i { font-style: normal; color: var(--accent); }
+
+main { display: grid; align-content: center; gap: 22px; padding-block: 24px 40px; max-width: 1000px; }
+.kicker { margin: 0; color: var(--muted); }
+.frase { margin: 0; font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(52px, 9.5vw, 132px); line-height: .95; letter-spacing: .005em; text-wrap: balance; overflow-wrap: anywhere; }
+.dato { margin: 0; font-size: clamp(16px, 1.6vw, 19px); max-width: 56ch; }
+.fuente { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; }
+.fuente a { color: var(--muted); text-underline-offset: 3px; }
+.ctx { display: grid; gap: 8px; max-width: 60ch; font-size: 14px; color: var(--muted); }
+.ctx p { margin: 0; }
+.ctx ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.ctx a { color: var(--ink); text-underline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  main.in > * { animation: sube .45s cubic-bezier(.2,.7,.2,1) both; }
+  main.in > *:nth-child(2) { animation-delay: .04s; }
+  main.in > *:nth-child(3) { animation-delay: .08s; }
+  main.in > *:nth-child(n+4) { animation-delay: .12s; }
+  @keyframes sube { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}
+
+.pie { border-top: 1px solid var(--line); }
+.pie .cnt { color: var(--muted); font-variant-numeric: tabular-nums; }
+.acc { display: flex; align-items: center; gap: 22px; }
+.hint { color: var(--muted); font-size: 13px; }
+kbd { font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 1px 7px; color: var(--ink); }
+@media (pointer: coarse) { .hint { display: none; } }
+.cta { font-family: var(--display); font-weight: 400; font-size: clamp(20px, 2.2vw, 26px); letter-spacing: .02em; text-transform: uppercase; line-height: 1; background: var(--accent); color: var(--on-accent); padding: 18px 30px; border-radius: 3px; }
+.cta:hover { filter: brightness(1.08); }
+.cta:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) { .cta { transition: transform .12s; } .cta:active { transform: scale(.98); } }
+@media (max-width: 560px) { .pie .cnt { display: none; } .acc { width: 100%; justify-content: space-between; gap: 16px; } .cta { flex: 1; padding: 18px 16px; } }
+
+/* Hojas */
+.sheet {
+  position: fixed; inset: 0; z-index: 20; background: var(--bg); overflow-y: auto;
+  padding: env(safe-area-inset-top, 0px) max(20px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(20px, env(safe-area-inset-left, 0px));
+}
+.sheet-in { max-width: 1200px; margin: 0 auto; }
+.sheet-body { display: grid; gap: 40px; padding-block: 24px 64px; max-width: 760px; }
+
+.ejes { display: grid; gap: 34px; }
+.eje { display: grid; gap: 6px; }
+.eje > .mono { color: var(--muted); }
+.sec { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; width: 100%; text-align: left; padding: 6px 0; font-size: clamp(22px, 3.4vw, 30px); font-weight: 500; line-height: 1.2; }
+.sec .n { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.sec[aria-expanded="true"] .n { color: var(--accent); }
+.frases { display: grid; padding: 4px 0 12px; }
+.frases button { text-align: left; padding: 7px 0 7px 18px; color: var(--muted); border-left: 1px solid var(--line); font-size: 15px; }
+.frases button:hover, .frases button[aria-current="true"] { color: var(--ink); border-left-color: var(--accent); }
+.nota { margin: 0; font-size: 13px; color: var(--muted); max-width: 62ch; }
+
+.cartel { display: grid; gap: 22px; padding-block: 16px 64px; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
+@media (max-width: 860px) { .cartel { grid-template-columns: minmax(0, 1fr); } }
+.vista { display: grid; gap: 8px; }
+.vista img { width: 100%; aspect-ratio: 420 / 297; display: block; border: 1px solid var(--line); background: #fff; }
+.vista .mono { color: var(--muted); font-size: 11px; }
+.ctrl { display: grid; gap: 22px; }
+.campo { display: grid; gap: 6px; }
+.campo > .mono { color: var(--muted); font-size: 11px; }
+input[type="text"] { width: 100%; font-size: 16px; padding: 10px 0; border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; background: none; }
+input[type="text"]:focus-visible { outline: none; border-bottom: 2px solid var(--accent); }
+.hint2 { font-size: 12px; color: var(--muted); }
+.estilos { display: flex; gap: 14px; }
+.estilo { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); }
+.estilo[aria-pressed="true"] { color: var(--ink); font-weight: 600; }
+.sw { width: 18px; height: 18px; border-radius: 50%; border: 1px solid rgba(128,128,128,.5); }
+.estilo[aria-pressed="true"] .sw { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--ink); }
+.btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn { font-weight: 600; font-size: 14px; padding: 12px 18px; border-radius: 3px; border: 1px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.secondary { color: var(--accent); }
+.btn:disabled { opacity: .5; cursor: progress; }
+.estado { font-size: 13px; color: var(--muted); min-height: 1.4em; margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="screen">
+  <header class="bar">
+    <button class="brand" id="inicio" type="button">Marcho <i>por</i></button>
+    <button class="mono link" id="abrir-menu" type="button" aria-haspopup="dialog">Menú</button>
+  </header>
+
+  <main id="motivo" aria-live="polite"></main>
+
+  <footer class="bar pie">
+    <span class="mono cnt" id="cnt"></span>
+    <div class="acc">
+      <span class="hint"><kbd>espacio</kbd> otro motivo</span>
+      <button class="mono link" id="otro" type="button">Otro</button>
+      <button class="cta" id="abrir-cartel" type="button" aria-haspopup="dialog">Imprímelo y marcha</button>
+    </div>
+  </footer>
+</div>
+
+<div class="sheet" id="menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+  <div class="sheet-in">
+    <div class="bar">
+      <span class="brand">Marcho <i>por</i></span>
+      <button class="mono link" data-cerrar type="button">Cerrar</button>
+    </div>
+    <div class="sheet-body">
+      <div class="ejes" id="ejes"></div>
+      <p class="nota">Cada motivo tiene medio y fecha. Si la cifra es de parte, se indica, y el contexto recoge la otra versión. Revisa la fuente antes de imprimir: los datos cambian rápido.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sheet" id="cartel" role="dialog" aria-modal="true" aria-label="Tu cartel" hidden>
+  <div class="sheet-in">
+    <div class="bar">
+      <span class="mono">Tu cartel · A3 horizontal</span>
+      <button class="mono link" data-cerrar type="button">Cerrar</button>
+    </div>
+    <div class="cartel">
+      <div class="vista">
+        <img id="vista" alt="Vista previa del cartel A3">
+        <span class="mono">420 × 297 mm · con QR a la fuente</span>
+      </div>
+      <div class="ctrl">
+        <label class="campo" for="frase"><span class="mono">Frase</span>
+          <input id="frase" type="text" maxlength="70" autocomplete="off">
+          <span class="hint2">Puedes reescribirla. El dato y la fuente no cambian.</span>
+        </label>
+        <div class="campo"><span class="mono">Color</span>
+          <div class="estilos" role="group" aria-label="Color del cartel" id="estilos"></div>
+        </div>
+        <div class="btns">
+          <button class="btn primary" id="pdf" type="button">Descargar PDF</button>
+          <button class="btn secondary" id="png" type="button">Imagen</button>
+        </div>
+        <p class="estado" id="estado" role="status"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="motivos.js"></script>
+<script>
+const EJES = [
+  { nombre: "Vida y seguridad", secs: ["seguridad", "transporte", "mujeres"] },
+  { nombre: "Instituciones", secs: ["congreso", "justicia"] },
+  { nombre: "Derechos sociales", secs: ["educacion", "salud", "economia"] },
+  { nombre: "Territorio", secs: ["clima", "ambiente"] }
+];
+const ORDEN = EJES.flatMap(e => e.secs);
+const cat = id => CATEGORIAS.find(c => c.id === id);
+const LISTA = ORDEN.flatMap(id => MOTIVOS.filter(m => m.cat === id));
+
+const ESTILOS = [
+  { id: "tinta", nombre: "Blanco", bg: "#ffffff", fg: "#111111", sub: "#333333", rule: "#111111" },
+  { id: "rojo", nombre: "Rojo", bg: "#d91023", fg: "#ffffff", sub: "#ffffff", rule: "#ffffff" },
+  { id: "amarillo", nombre: "Amarillo", bg: "#ffd400", fg: "#111111", sub: "#222222", rule: "#111111" }
+];
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const pad = n => String(n).padStart(2, "0");
+
+const state = { motivo: null, frase: "", estilo: ESTILOS[0] };
+try { const e = ESTILOS.find(x => x.id === localStorage.getItem("marcho-por-color")); if (e) state.estilo = e; } catch (e) {}
+
+function mostrar(m) {
+  if (!m || m === state.motivo) return;
+  state.motivo = m; state.frase = m.frase;
+  const c = cat(m.cat), f = m.fuentes[0];
+  const ctx = m.contexto.startsWith("<b>") ? m.contexto : "<b>Contexto:</b> " + esc(m.contexto);
+  const main = $("motivo");
+  main.classList.remove("in"); void main.offsetWidth;
+  main.innerHTML = `
+    <p class="mono kicker">${c.nombre} · ${m.regiones.join(", ")}</p>
+    <h1 class="frase">${esc(m.frase)}</h1>
+    <p class="dato">${esc(m.dato)}</p>
+    <div class="fuente"><a href="${f.url}" target="_blank" rel="noopener">${esc(f.medio)}, ${esc(f.fecha)} ↗</a><button class="link" id="ver-ctx" type="button" aria-expanded="false" aria-controls="ctx">Contexto y fuentes</button></div>
+    <div class="ctx" id="ctx" hidden><p>${ctx}</p><ul>${m.fuentes.map(x => `<li><a href="${x.url}" target="_blank" rel="noopener">${esc(x.titulo)}</a> · ${esc(x.medio)}, ${esc(x.fecha)}</li>`).join("")}</ul></div>`;
+  main.classList.add("in");
+  $("cnt").textContent = `${pad(LISTA.indexOf(m) + 1)} / ${pad(LISTA.length)}`;
+  if (location.hash.slice(1) !== m.id) { try { history.replaceState(null, "", "#" + m.id); } catch (e) { location.hash = m.id; } }
+}
+function aleatorio() {
+  const otros = LISTA.filter(m => m !== state.motivo);
+  mostrar(otros[Math.floor(Math.random() * otros.length)]);
+}
+function paso(d) {
+  const i = LISTA.indexOf(state.motivo);
+  mostrar(LISTA[(i + d + LISTA.length) % LISTA.length]);
+}
+$("motivo").addEventListener("click", e => {
+  const b = e.target.closest("#ver-ctx"); if (!b) return;
+  const open = b.getAttribute("aria-expanded") !== "true";
+  b.setAttribute("aria-expanded", String(open)); $("ctx").hidden = !open;
+});
+$("otro").addEventListener("click", aleatorio);
+$("inicio").addEventListener("click", aleatorio);
+window.addEventListener("hashchange", () => mostrar(MOTIVOS.find(m => m.id === location.hash.slice(1))));
+
+/* Hojas */
+let abierta = null, volver = null;
+function abrir(id) {
+  volver = document.activeElement; abierta = $(id); abierta.hidden = false;
+  document.body.style.overflow = "hidden";
+  abierta.querySelector("[data-cerrar]").focus();
+}
+function cerrar() {
+  if (!abierta) return;
+  abierta.hidden = true; abierta = null; document.body.style.overflow = "";
+  if (volver) volver.focus();
+}
+document.querySelectorAll("[data-cerrar]").forEach(b => b.addEventListener("click", cerrar));
+$("abrir-menu").addEventListener("click", () => { renderMenu(); abrir("menu"); });
+$("abrir-cartel").addEventListener("click", () => { $("frase").value = state.frase; renderEstilos(); draw(); $("estado").textContent = ""; abrir("cartel"); });
+
+let expandida = null;
+function renderMenu() {
+  if (expandida === null) expandida = state.motivo.cat;
+  $("ejes").innerHTML = EJES.map(e => `<div class="eje"><span class="mono">${e.nombre}</span>${e.secs.map(id => {
+    const ms = LISTA.filter(m => m.cat === id), open = id === expandida;
+    return `<button class="sec" type="button" data-sec="${id}" aria-expanded="${open}"><span>${cat(id).nombre}</span><span class="n">${ms.length}</span></button>` +
+      (open ? `<div class="frases">${ms.map(m => `<button type="button" data-m="${m.id}" aria-current="${m === state.motivo}">${esc(m.frase)}</button>`).join("")}</div>` : "");
+  }).join("")}</div>`).join("");
+}
+$("ejes").addEventListener("click", e => {
+  const s = e.target.closest("[data-sec]");
+  if (s) { expandida = expandida === s.dataset.sec ? "" : s.dataset.sec; renderMenu(); const b = $("ejes").querySelector(`[data-sec="${s.dataset.sec}"]`); if (b) b.focus(); return; }
+  const m = e.target.closest("[data-m]");
+  if (m) { mostrar(MOTIVOS.find(x => x.id === m.dataset.m)); cerrar(); }
+});
+
+document.addEventListener("keydown", e => {
+  if (abierta) { if (e.key === "Escape") cerrar(); return; }
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.code === "Space" || e.key === " ") { e.preventDefault(); aleatorio(); }
+  else if (e.key === "ArrowRight") paso(1);
+  else if (e.key === "ArrowLeft") paso(-1);
+});
+
+function renderEstilos() {
+  $("estilos").innerHTML = ESTILOS.map(s => `<button type="button" class="estilo" data-id="${s.id}" aria-pressed="${s === state.estilo}"><span class="sw" style="background:${s.bg}"></span>${s.nombre}</button>`).join("");
+}
+$("estilos").addEventListener("click", e => {
+  const b = e.target.closest(".estilo"); if (!b) return;
+  state.estilo = ESTILOS.find(x => x.id === b.dataset.id);
+  try { localStorage.setItem("marcho-por-color", state.estilo.id); } catch (err) {}
+  renderEstilos(); draw();
+});
+let t;
+$("frase").addEventListener("input", e => { state.frase = e.target.value; clearTimeout(t); t = setTimeout(draw, 160); });
+
+/* Cartel A3 horizontal a 150 dpi */
+const W = 2480, H = 1754, M = 110;
+const canvas = document.createElement("canvas");
+canvas.width = W; canvas.height = H;
+const ctx = canvas.getContext("2d");
+
+function wrap(text, maxW) {
+  const words = text.split(/\s+/).filter(Boolean); const lines = []; let line = "";
+  for (const w of words) {
+    const test = line ? line + " " + w : w;
+    if (ctx.measureText(test).width <= maxW || !line) line = test; else { lines.push(line); line = w; }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+function fit(text, font, maxW, maxH, maxSize, minSize, lh) {
+  for (let s = maxSize; s >= minSize; s -= 4) {
+    ctx.font = font(s);
+    const lines = wrap(text, maxW);
+    if (lines.length * s * lh <= maxH && lines.every(l => ctx.measureText(l).width <= maxW)) return { s, lines };
+  }
+  ctx.font = font(minSize);
+  return { s: minSize, lines: wrap(text, maxW) };
+}
+function drawQR(url, x, y, size) {
+  if (typeof qrcode !== "function") return;
+  const qr = qrcode(0, "M"); qr.addData(url); qr.make();
+  const n = qr.getModuleCount(), c = size / n;
+  ctx.fillStyle = "#111111";
+  for (let r = 0; r < n; r++) for (let k = 0; k < n; k++)
+    if (qr.isDark(r, k)) ctx.fillRect(Math.floor(x + k * c), Math.floor(y + r * c), Math.ceil(c), Math.ceil(c));
+}
+function draw() {
+  const st = state.estilo, m = state.motivo;
+  const frase = ((state.frase || "").trim() || m.frase).toUpperCase();
+  ctx.fillStyle = st.bg; ctx.fillRect(0, 0, W, H);
+  ctx.textBaseline = "alphabetic";
+
+  ctx.fillStyle = st.fg;
+  ctx.font = '600 54px "IBM Plex Mono", monospace';
+  ctx.textAlign = "left"; ctx.fillText("MARCHO POR", M, M + 50);
+  ctx.textAlign = "right"; ctx.font = '500 40px "IBM Plex Mono", monospace';
+  ctx.fillText(cat(m.cat).nombre.toUpperCase() + " · PERÚ 2026", W - M, M + 46);
+  ctx.textAlign = "left";
+  ctx.fillStyle = st.rule; ctx.fillRect(M, M + 90, W - 2 * M, 16);
+
+  const boxTop = M + 160, boxH = 900;
+  const f = fit(frase, s => `${s}px Anton, Impact, sans-serif`, W - 2 * M, boxH, 480, 100, 1.02);
+  ctx.fillStyle = st.fg; ctx.font = `${f.s}px Anton, Impact, sans-serif`;
+  f.lines.forEach((l, i) => ctx.fillText(l, M - f.s * 0.02, boxTop + f.s * 0.88 + i * f.s * 1.02));
+
+  const q = 300, qx = W - M - q, qy = H - M - q;
+  const colW = qx - 90 - M;
+  const datoTop = 1190;
+  ctx.fillStyle = st.rule; ctx.fillRect(M, datoTop, W - 2 * M, 6);
+  const d = fit(m.dato, s => `600 ${s}px "Work Sans", sans-serif`, colW, 200, 58, 34, 1.25);
+  ctx.fillStyle = st.fg; ctx.font = `600 ${d.s}px "Work Sans", sans-serif`;
+  d.lines.forEach((l, i) => ctx.fillText(l, M, datoTop + 30 + d.s + i * d.s * 1.25));
+
+  ctx.fillStyle = "#ffffff"; ctx.fillRect(qx - 18, qy - 18, q + 36, q + 36);
+  drawQR(m.fuentes[0].url, qx, qy, q);
+  const fuente = m.fuentes[0];
+  ctx.fillStyle = st.fg; ctx.font = '600 34px "IBM Plex Mono", monospace';
+  ctx.fillText("VERIFÍCALO", M, 1490);
+  ctx.fillStyle = st.sub; ctx.font = '500 34px "Work Sans", sans-serif';
+  wrap(`Fuente: ${fuente.medio}, ${fuente.fecha}. “${fuente.titulo}”`, colW).slice(0, 2).forEach((l, i) => ctx.fillText(l, M, 1540 + i * 44));
+  ctx.font = '500 30px "Work Sans", sans-serif';
+  ctx.fillText("Escanea el código para leer la nota →", M, H - M);
+
+  $("vista").src = canvas.toDataURL("image/jpeg", 0.85);
+}
+
+function bajar(blob, nombre) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = nombre; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+async function guardar(ext) {
+  const btns = [$("pdf"), $("png")]; btns.forEach(b => b.disabled = true);
+  $("estado").textContent = "Preparando archivo…";
+  try {
+    draw();
+    let blob;
+    if (ext === "pdf") {
+      const pdf = new window.jspdf.jsPDF({ orientation: "landscape", unit: "mm", format: "a3" });
+      pdf.addImage(canvas.toDataURL("image/jpeg", 0.95), "JPEG", 0, 0, 420, 297);
+      blob = pdf.output("blob");
+    } else {
+      blob = await new Promise(r => canvas.toBlob(r, "image/png"));
+    }
+    bajar(blob, `cartel-${state.motivo.id}-A3.${ext}`);
+    $("estado").textContent = ext === "pdf" ? "Listo. Imprime a tamaño real (100%) en A3 horizontal." : "Imagen descargada.";
+  } catch (err) {
+    $("estado").textContent = "No se pudo generar el archivo. Mantén presionada la vista previa para guardar la imagen.";
+  } finally { btns.forEach(b => b.disabled = false); }
+}
+$("pdf").addEventListener("click", () => guardar("pdf"));
+$("png").addEventListener("click", () => guardar("png"));
+
+mostrar(MOTIVOS.find(m => m.id === location.hash.slice(1)) || LISTA[Math.floor(Math.random() * LISTA.length)]);
+Promise.all([
+  document.fonts.load('400 100px "Anton"'),
+  document.fonts.load('600 60px "Work Sans"'),
+  document.fonts.load('500 40px "Work Sans"'),
+  document.fonts.load('600 40px "IBM Plex Mono"'),
+  document.fonts.load('500 40px "IBM Plex Mono"')
+]).catch(() => {}).then(() => { if (abierta && abierta.id === "cartel") draw(); });
+</script>
+</body>
+</html>
