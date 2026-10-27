@@ -99,6 +99,9 @@ kbd { font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); 
 .frases button { text-align: left; padding: 7px 0 7px 18px; color: var(--muted); border-left: 1px solid var(--line); font-size: 15px; }
 .frases button:hover, .frases button[aria-current="true"] { color: var(--ink); border-left-color: var(--accent); }
 .nota { margin: 0; font-size: 13px; color: var(--muted); max-width: 62ch; }
+.aviso { display: grid; gap: 8px; padding-top: 20px; border-top: 1px solid var(--line); }
+.aviso > .mono { color: var(--muted); }
+.nota a { color: var(--ink); text-underline-offset: 3px; }
 
 .cartel { display: grid; gap: 22px; padding-block: 16px 64px; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; }
 @media (max-width: 860px) { .cartel { grid-template-columns: minmax(0, 1fr); } }
@@ -152,7 +155,11 @@ input[type="text"]:focus-visible { outline: none; border-bottom: 2px solid var(-
     </div>
     <div class="sheet-body">
       <div class="ejes" id="ejes"></div>
-      <p class="nota">Cada motivo tiene medio y fecha. Si la cifra es de parte, se indica, y el contexto recoge la otra versión. Revisa la fuente antes de imprimir: los datos cambian rápido.</p>
+      <div class="aviso">
+        <span class="mono">Aviso</span>
+        <p class="nota">Marcho Por es una página independiente que solo recopila noticias publicadas por medios y entidades, siempre con su fuente y fecha. No produce información propia, no está afiliada a ningún partido, organización ni medio de comunicación y no convoca marchas.</p>
+        <p class="nota">Si una cifra es de parte, se indica, y el contexto recoge la otra versión. Los datos pueden cambiar: verifica la fuente original antes de imprimir. ¿Encontraste un error? <a href="https://github.com/maatjade/marcho-por/issues" target="_blank" rel="noopener">Repórtalo aquí</a>.</p>
+      </div>
     </div>
   </div>
 </div>

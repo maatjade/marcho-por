@@ -17,3 +17,7 @@ Motivos con fuente verificable para marchar en el Perú. Cada motivo se puede im
 ## Regla de oro
 
 Cada dato lleva medio y fecha. Si la cifra es de parte, se indica. El contexto recoge la otra versión.
+
+## Aviso
+
+Marcho Por es una página independiente que solo recopila noticias publicadas por medios y entidades, con su fuente y fecha. No produce información propia, no está afiliada a ningún partido, organización ni medio, y no convoca marchas. Si encuentras un error, abre un *issue* en este repositorio.
